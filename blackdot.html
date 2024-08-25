@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKDOT - Movie Database</title>
+    <link rel="stylesheet" href="crown.css">
+    <script src="oo.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/zSrcnNk/fotor-20240823203136.png" alt="BLACKDOT Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="fetchMovies()">Movies</a></li>
+                <li><a href="#" onclick="fetchPeople()">People</a></li>
+                <li><a href="#" onclick="fetchTVShows()">TV Shows</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <section id="welcome">
+        <h1>Welcome to BLACKDOT</h1>
+        <p>Your Ultimate Movie Database</p>
+    </section>
+
+    <!-- Font Awesome Icons Example -->
+<nav>
+    <ul>
+        <li><a href="#"><i class="fas fa-home custom-icon"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-search custom-icon"></i> Search</a></li>
+        <li><a href="#"><i class="fas fa-film custom-icon"></i> Movies</a></li>
+        <li><a href="#"><i class="fas fa-tv custom-icon"></i> TV Shows</a></li>
+        <li><a href="#"><i class="fas fa-user custom-icon"></i> Profile</a></li>
+    </ul>
+</nav>
+
+    </section>
+
+    <section id="filters">
+        <h2>Filter Movies</h2>
+        <div class="filter-options">
+            <div>
+                <label for="genre-select">Genre:</label>
+                <select id="genre-select" onchange="applyFilters()">
+                    <!-- Genres will be populated dynamically -->
+                </select>
+            </div>
+            <div>
+                <label for="year-select">Year:</label>
+                <select id="year-select" onchange="applyFilters()">
+                    <option value="">All</option>
+                    <!-- Years will be populated dynamically -->
+                </select>
+            </div>
+            <div>
+                <label for="rating-select">Rating:</label>
+                <select id="rating-select" onchange="applyFilters()">
+                    <option value="">All</option>
+                    <option value="7">7+</option>
+                    <option value="8">8+</option>
+                    <option value="9">9+</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search movies...">
+        <button onclick="search()">Search</button>
+    </div>
+
+    <section id="trending">
+        <h2>Trending Movies</h2>
+        <div class="period-toggle">
+            <button onclick="fetchTrending('day')" class="active" data-period="day">Today</button>
+            <button onclick="fetchTrending('week')" data-period="week">This Week</button>
+        </div>
+        <div id="trending-movies" class="movies-container"></div>
+        <button id="load-more-btn" style="display: none;" onclick="loadMoreMovies()">Load More</button>
+    </section>
+    
+</script>
+
+<style>
+    /* Responsive image styles */
+    .poster-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+    
+            <!-- Favorite items will be dynamically added here -->
+        </div>
+    </section>
+</body>
+</html>
